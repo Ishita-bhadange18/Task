@@ -1,0 +1,205 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #ecf0f1;
+        }
+
+        .element-item {
+            background: #34495e;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: grab;
+            /* user-select: none; */
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .element-item:hover {
+            background: #4a6741;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .element-item:active {
+            cursor: grabbing;
+        }
+
+        .element-item.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .main-area {
+            flex: 1;
+            background: white;
+            position: relative;
+            overflow: auto;
+        }
+
+        .canvas {
+            min-height: 100%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .canvas.drag-over {
+            background: #e8f5e8;
+            border: 2px dashed #27ae60;
+        }
+
+        .dropped-element {
+            position: absolute;
+            min-width: 100px;
+            min-height: 30px;
+            border: 2px dashed transparent;
+            cursor: move;
+            /* user-select: none; */
+        }
+
+        .dropped-element:hover {
+            border-color: #3498db;
+        }
+
+        .dropped-element.selected {
+            border-color: #e74c3c;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .modal h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .dropped-paragraph {
+            line-height: 1.6;
+        }
+
+        .dropped-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .dropped-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .dropped-button:hover {
+            opacity: 0.8;
+        }
+    

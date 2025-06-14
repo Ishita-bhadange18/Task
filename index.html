@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Website Builder</title>
+   <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Elements</h2>
+            <div class="element-item" draggable="true" data-type="paragraph">
+                <strong>📝 Text Paragraph</strong>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.8;">Add a text paragraph</p>
+            </div>
+            <div class="element-item" draggable="true" data-type="image">
+                <strong>🖼️ Image</strong>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.8;">Add an image</p>
+            </div>
+            <div class="element-item" draggable="true" data-type="button">
+                <strong>🔘 Button</strong>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.8;">Add a clickable button</p>
+            </div>
+        </div>
+        
+        <div class="main-area">
+            <div class="canvas" id="canvas">
+                <h1 style="color: #2c3e50; margin-bottom: 20px;">Drop elements here to build your website</h1>
+                <p style="color: #7f8c8d;">Drag elements from the sidebar and drop them anywhere on this canvas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for element properties -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Element Properties</h3>
+            <div id="modal-form"></div>
+            <div class="modal-buttons">
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveElement()">Save</button>
+            </div>
+        </div>
+    </div>
+ <script src="script.js"></script>
+</body>
+</html>
